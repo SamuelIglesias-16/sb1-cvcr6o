@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Amatic+SC:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream: #FFF9E6;
+  --color-brown: #8B4513;
+  --color-accent: #4ECDC4;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--color-cream);
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Amatic SC', cursive;
+}
+
+.btn {
+  @apply px-6 py-3 rounded-full transition-all duration-300 ease-in-out text-lg font-semibold;
+}
+
+.btn-primary {
+  @apply bg-brown text-cream hover:bg-cream hover:text-brown border-2 border-brown shadow-md hover:shadow-lg;
+}
+
+.nav-link {
+  @apply text-brown hover:text-accent px-3 py-2 rounded-full transition-all duration-300 font-medium;
+}
+
+.cookie-image {
+  @apply transition-all duration-300 ease-in-out hover:scale-105 hover:rotate-3 rounded-2xl shadow-lg;
+}
+
+.section-title {
+  @apply text-5xl mb-8 text-center;
+}
+
+.card {
+  @apply bg-white rounded-3xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl;
+}
+
+.scroll-transition {
+  opacity: 0;
+  transform: translateY(30px) rotate(-5deg);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scroll-transition.show {
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.5s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 1s ease-out 0.5s both;
+}
+
+.delay-0 { transition-delay: 0s; }
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
